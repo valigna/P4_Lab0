@@ -2,8 +2,8 @@
 #define INVESTIGADOR_HH
 #include <string>
 #include <set>
-#include "Publicacion.h"  
-#include "DTFecha.h"
+#include "Publicacion.hh"  
+#include "DTFecha.hh"
 using namespace std;
 class Investigador {
     private:
