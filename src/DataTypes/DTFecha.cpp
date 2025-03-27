@@ -1,5 +1,5 @@
-#ifndef DTFecha.cpp
-#define DTFecha.cpp
+#ifndef DTFecha_cpp
+#define DTFecha_cpp
 
 #include "../../include/DataTypes/DTFecha.hh"
 
@@ -11,7 +11,7 @@ DTFecha::DTFecha(int dia, int mes, int ano) {
 }
 
 // Destructor
-DTFecha::~DTFecha(){};
+DTFecha::~DTFecha(){}
 
 // Getteres
 int DTFecha::getDia() const {
