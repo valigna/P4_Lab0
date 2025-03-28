@@ -23,10 +23,15 @@ void Investigador::agregarPublicacion(Publicacion * p) {
 }
 string Investigador::toString(){
     return ORCID + "->" + nombre + "/" + institucion;}
-
 set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
-    //todavia no funca pero si compila
     set<string> resultado;
-return resultado;}
-    
+    for (set<Publicacion*>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); ++it) {
+        Publicacion* p = *it; 
+        DTFecha fecha = p->getDT().getFecha();
+        if ( (fecha > desde || fecha == desde) && p->contienePalabra(palabra)) {
+            resultado.insert(p->getDT().getDOI());
+        }
+    }
+    return resultado;}
+   
    
