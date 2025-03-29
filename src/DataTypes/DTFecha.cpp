@@ -4,10 +4,10 @@
 #include "../../include/DataTypes/DTFecha.hh"
 
 // Constructor
-DTFecha::DTFecha(int dia, int mes, int ano) {
+DTFecha::DTFecha(int dia, int mes, int anio) {
 	this->dia = dia;
 	this->mes = mes;
-	this->ano = ano;
+	this->anio = anio;
 }
 
 // Destructor
@@ -22,8 +22,8 @@ int DTFecha::getMes() const {
 	return this->mes;
 }
 
-int DTFecha::getAno() const {
-	return this->ano;
+int DTFecha::getAnio() const {
+	return this->anio;
 }
 
 // Operadores
@@ -31,7 +31,7 @@ bool DTFecha::operator>(const DTFecha &fecha) const {
 	return (
 		this->dia > fecha.dia ||
 		this->mes > fecha.mes ||
-		this->ano > fecha.ano
+		this->anio > fecha.anio
 	);
 }
 

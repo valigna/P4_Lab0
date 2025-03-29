@@ -29,4 +29,7 @@ class DTRefer {
 
 };
 
+// Declaración del operador de inserción de flujo
+ostream& operator<<(ostream& os, const DTRefer& refer);
+
 #endif

@@ -5,11 +5,11 @@ class DTFecha {
 	private:
 		int dia;
 		int mes;
-		int ano;
+		int anio;
 
 	public:
 		// Constructores
-		DTFecha(int dia, int mes, int ano);
+		DTFecha(int dia, int mes, int anio);
 
 		// Destructor
 		~DTFecha();
@@ -17,7 +17,7 @@ class DTFecha {
 		// Getters
 		int getDia() const;
 		int getMes() const;
-		int getAno() const;
+		int getAnio() const;
 
 		// Operadores
 		bool operator>(const DTFecha &) const;

@@ -1,6 +1,8 @@
 #ifndef DTRefer_cpp
 #define DTRefer_cpp
 
+#include <iostream>
+#include <iterator>
 #include "../../include/DataTypes/DTRefer.hh"
 
 // constructor
@@ -29,6 +31,37 @@ DTFecha DTRefer::getFecha() const {
 
 set<string> DTRefer::getAutores() const {
 	return this->autores;
+}
+
+// Implementación del operador de inserción de flujo
+ostream& operator<<(ostream& os, const DTRefer& refer) {
+    // Imprimir DOI->titulo
+    os << refer.getDOI() << "->" << refer.getTitulo();
+    
+    // Obtener el objeto fecha
+    DTFecha fecha = refer.getFecha();
+    
+    // Imprimir (fecha) en formato DD/MM/AAAA
+    os << "(" << fecha.getDia() << "/" << fecha.getMes() << "/" << fecha.getAnio() << ")";
+    
+    // Imprimir /autor1,autor2,...,autorN
+    os << "/";
+    
+    set<string> autores = refer.getAutores();
+    if (!autores.empty()) {
+        // Imprimir todos los autores separados por comas
+        set<string>::iterator it = autores.begin();
+        os << *it; // Primer autor sin coma al principio
+        ++it;
+        
+        // Resto de autores con comas
+        while (it != autores.end()) {
+            os << "," << *it;
+            ++it;
+        }
+    }
+    
+    return os;
 }
 
 #endif
