@@ -3,22 +3,30 @@
 #include "../include/ArticuloRevista.hh"
 using namespace std;
 
-ArticuloRevista::ArticuloRevista(string d, string t, DTFecha f, string r, string e)
-    : Publicacion(d, t, f) {
-        this->revista = r;
-        this->extracto = e;
+ArticuloRevista::ArticuloRevista(std::string DOI, std::string titulo, DTFecha fecha, std::string revista, std::string extracto)
+    : Publicacion(DOI, titulo, fecha) {
+        this->revista = revista;
+        this->extracto = extracto;
 }
 
 ArticuloRevista::~ArticuloRevista() {};
 
-bool ArticuloRevista::contienePalabra(string palabra) {
+bool ArticuloRevista::contienePalabra(std::string palabra) {
     return (this->extracto.find(palabra) != this->extracto.end());
 }
 
 string ArticuloRevista::getRevista()  {
-    return revista;
+    return this->revista;
 }
 
 string ArticuloRevista::getExtracto() {
-    return extracto;
+    return this->extracto;
+}
+
+void ArticuloRevista::setRevista(std::string revista) {
+    this->revista = revista;
+}
+
+void ArticuloRevista::setExtracto(std::string extracto) {
+    this->extracto = extracto;
 }

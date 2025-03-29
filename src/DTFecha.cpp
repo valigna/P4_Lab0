@@ -1,7 +1,7 @@
 #ifndef DTFecha_cpp
 #define DTFecha_cpp
 
-#include "../../include/DataTypes/DTFecha.hh"
+#include "../include/DTFecha.hh"
 
 // Constructor
 DTFecha::DTFecha(int dia, int mes, int anio) {

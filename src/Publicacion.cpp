@@ -1,4 +1,5 @@
-#include <../include/Publicacion.hh>
+#include "../include/Publicacion.hh"
+#include "../include/Investigador.hh"
 #include <set>
 #include <string>
 
@@ -6,37 +7,40 @@
 std::string Publicacion::getDOI(){
     return this->DOI;
 }
-std::string Publicacion::gettitulo(){
+std::string Publicacion::getTitulo(){
     return this->titulo;
 }
-DTFecha Publicacion::getfecha(){
+DTFecha Publicacion::getFecha(){
     return this->fecha;
 }
-std::set<Investigador*> getautores(){
+std::set<Investigador*> Publicacion::getAutores(){
     return this->autores;
 }
 DTRefer Publicacion::getDT(){
-    DTRefer* DT = new DTRefer;
-    DT->DOI=getDOI();
-    DT->titulo=gettitulo();
-    DT->fecha=getfecha();
-    DT->autores=getautores();
+    // Crea un set de strings con los nombres de los autores
+    std::set<std::string> nombresAutores;
+    for (std::set<Investigador*>::iterator it = this->autores.begin(); it != this->autores.end(); ++it) {
+        Investigador* investigador = *it;
+        nombresAutores.insert(investigador->getNombre());
+    }
+    
+    DTRefer DT(getDOI(), getTitulo(), getFecha(), nombresAutores);
     return DT;
 }
 //Setters
-    void setDOI(std::string DOI){
+    void Publicacion::setDOI(std::string DOI){
         this->DOI=DOI;
         return;
     }
-    void settitulo(std::string titulo){
+    void Publicacion::setTitulo(std::string titulo){
         this->titulo=titulo;
         return;
     }
-    void setfecha(DTFecha fecha){
+    void Publicacion::setFecha(DTFecha fecha){
         this->fecha=fecha;
         return;
     }
-    void setautores(std::set<Investigador*> autores){
+    void Publicacion::setAutores(std::set<Investigador*> autores){
         this->autores=autores;
         return;
     }

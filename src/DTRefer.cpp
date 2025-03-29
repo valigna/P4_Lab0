@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <iterator>
-#include "../../include/DataTypes/DTRefer.hh"
+#include "../include//DTRefer.hh"
 
 // constructor
 DTRefer::DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores) {

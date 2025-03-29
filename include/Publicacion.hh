@@ -1,8 +1,13 @@
 #ifndef PUBLICACION_HH
 #define PUBLICACION_HH
 
+#include "DTFecha.hh"
+#include "DTRefer.hh"
+
 #include <string>
 #include <set>
+
+class Investigador;
 
 class Publicacion {
     private:
@@ -13,15 +18,17 @@ class Publicacion {
     public:
     //Getters
     std::string getDOI();
-    std::string gettitulo();
-    DTFecha getfecha();
-    std::set<Investigador*> getautores();
+    std::string getTitulo();
+    DTFecha getFecha();
+    std::set<Investigador*> getAutores();
     DTRefer getDT();
     //Setters
     void setDOI(std::string DOI);
-    void settitulo(std::string titulo);
-    void setfecha(DTFecha fecha);
-    void setautores(std::set<Investigador*> autores);
+    void setTitulo(std::string titulo);
+    void setFecha(DTFecha fecha);
+    void setAutores(std::set<Investigador*> autores);
     //Metodos
     virtual bool contienePalabra(std::string palabra);
 };
+
+#endif

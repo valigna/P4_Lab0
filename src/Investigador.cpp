@@ -1,6 +1,7 @@
 #include <string>
 #include <set>
 #include "../include/Investigador.hh"
+#include "../include/Publicacion.hh"
 using namespace std;
 //Constructor
 Investigador::Investigador(string orcid,string nombre,string institucion){

@@ -2,15 +2,17 @@
 #define INVESTIGADOR_HH
 #include <string>
 #include <set>
-#include "Publicacion.hh"  
 #include "DTFecha.hh"
 using namespace std;
+
+class Publicacion;
+
 class Investigador {
     private:
     string ORCID;
     string nombre;
     string institucion;
-   set<Publicacion*> publicaciones;
+    set<Publicacion*> publicaciones;
     public:
  //Constructor
     Investigador(string,string,string);
